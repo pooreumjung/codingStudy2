@@ -1,0 +1,27 @@
+<body>
+    <h1><a href="/">LOGO</a></h1>
+    <h2>수정하기</h2>
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+        </tr>
+        {% for item in content %}
+        <tr>
+            <td>1</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.date}}</td>
+            <td>
+                <form method="post" action="/board/delete">
+                    <input type="submit" value="삭제하기" />
+                    <input type="hidden" name="index" value="{{index}}" />
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/board/list">목록</a>
+</body>

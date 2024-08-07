@@ -1,0 +1,16 @@
+{
+    "name": "node_study",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "chokidar": "^3.6.0",
+        "express": "^4.19.2",
+        "nunjucks": "^3.2.4"
+    }
+}

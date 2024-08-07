@@ -1,0 +1,42 @@
+<body>
+    <h1><a href="/">LOGO</a></h1>
+    <h2>게시판 리스트</h2>
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+        </tr>
+        {% set num = 1%} {% for item in content %}
+
+        <tr>
+            <td>{{num}}</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.date}}</td>
+            <td><a href="/board/update?index={{num-1}}">수정하기</a></td>
+            <td>
+                <form method="post" action="/board/delete">
+                    <input type="submit" value="삭제하기" />
+                    <input type="hidden" value="{{num-1}}" />
+                </form>
+            </td>
+        </tr>
+        {% set num=num+1 %} {% endfor %}
+
+        <div>
+            <ul>
+                <li>
+                    <a href="/board/write">글쓰기</a>
+                </li>
+                <li>
+                    <a href="/board/update">수정하기</a>
+                </li>
+                <li>
+                    <a href="/board/modify">삭제하기</a>
+                </li>
+            </ul>
+        </div>
+    </table>
+</body>
