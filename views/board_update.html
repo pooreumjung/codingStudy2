@@ -9,11 +9,11 @@
         <a href="/">logo</a>
         <h2>수정 페이지</h2>
         <form method="post" action="/board/update">
-            <input type="hidden" name="index" value="{{index}}" />
+            <input type="hidden" name="idx" value="{{content.idx}}" />
             <ul>
-                <li><strong>글제목</strong> : <input type="text" name="subject" value="{{data.subject}}" /></li>
-                <li><strong>작성자</strong> : <input type="text" name="username" value="{{data.username}}" /></li>
-                <li><strong>작성일</strong> : <input type="text" name="date" value="{{data.date}}" /></li>
+                <li><strong>글제목</strong> : <input type="text" value="{{content.subject}}" name="subject" /></li>
+                <li><strong>작성자</strong> : <input type="text" value="{{content.username}}" name="username" /></li>
+                <li><strong>작성일</strong> : <input type="text" value="{{content.date}}" name="date" /></li>
             </ul>
             <input type="submit" value="수정하기" />
         </form>
