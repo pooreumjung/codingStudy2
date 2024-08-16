@@ -4,7 +4,7 @@
     <form method="post" action="/board/write">
         <ul>
             <li>제목: <input type="text" name="subject" /></li>
-            <li>작성자: <input type="text" name="username" /></li>
+            <li>작성자: <input type="text" value="{{content}}" name="username" /></li>
             <li>작성일: <input type="text" name="date" /></li>
         </ul>
         <input type="submit" value="작성하기" />

@@ -1,10 +1,10 @@
 const mysql = require('mysql2/promise'); // 불러와주기
 // db가져오는 형식
 var db_info = {
-    host: 'database.cj2yw4ㅑkschmz.ap-northeast-2.rds.amazonaws.com',
+    host: 'database.cj2yw4kschmz.ap-northeast-2.rds.amazonaws.com',
     port: '3306',
     user: 'admin',
-    password: '',
+    password: 'jpr2589631470!',
     database: 'pooreum',
 };
 const getConnection = async () => {

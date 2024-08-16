@@ -1,36 +1,38 @@
 <body>
     <h1><a href="/">LOGO</a></h1>
-    <h2>게시판 리스트</h2>
-    <table>
-        <tr>
-            <td>번호</td>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>작성일</td>
-        </tr>
-        {% for item in content %}
+    <div>
+        <h2>게시판 리스트</h2>
+        <a href="/board/write">글쓰기</a>
+        <form method="post" action="/board/logout">
+            <input type="submit" value="로그아웃" />
+        </form>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+            </tr>
+            {% for item in content %}
 
-        <tr>
-            <td>{{item.idx}}</td>
-            <td>{{item.subject}}</td>
-            <td>{{item.username}}</td>
-            <td>{{item.date}}</td>
-            <td><a href="/board/update?index={{item.idx}}">수정하기</a></td>
-            <td>
-                <form method="post" action="/board/delete">
-                    <input type="submit" value="삭제하기" />
-                    <input type="hidden" value="{{item.idx}}" name="idx" />
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-
-        <div>
-            <ul>
-                <li>
-                    <a href="/board/write">글쓰기</a>
-                </li>
-            </ul>
-        </div>
-    </table>
+            <tr>
+                <td>{{item.idx}}</td>
+                <td>{{item.subject}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.date}}</td>
+                {% if item.username === id %}
+                <td><a href="/board/update?index={{item.idx}}">수정하기</a></td>
+                <td>
+                    <form method="post" action="/board/delete">
+                        <input type="submit" value="삭제하기" />
+                        <input type="hidden" value="{{item.idx}}" name="idx" />
+                    </form>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>

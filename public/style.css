@@ -1,0 +1,6 @@
+.input-list {
+    list-style: none;
+}
+.input-list li:last-child {
+    background-color: blanchedalmond;
+}
